@@ -1,0 +1,198 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# pyenv
+.python-version
+
+# uv
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.orig
+.project
+*.pydevproject
+.settings/
+*.sublime-*
+*.komodoproject
+*.kdev4
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.secrets/
+secret/
+secrets/
+
+# API Keys (be extra careful!)
+*.key
+*.pem
+*.crt
+*.cert
+credentials*.json
+service-account*.json
+
+# Pinecone and vector database local files
+pinecone_local/
+chroma/
+chromadb/
+qdrant_local/
+weaviate/
+milvus/
+
+# Streamlit
+.streamlit/
+streamlit/
+
+# Data directories
+data/
+!data/README.md
+uploads/
+processed/
+temp/
+tmp/
+*.pdf
+*.docx
+*.txt
+*.csv
+*.jsonl
+*.parquet
+*.feather
+
+# Logs
+logs/
+*.log
+*.log.*
+log/
+*.pid
+
+# OS generated files
+.DS_Store?
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon?
+.AppleDouble
+.LSOverride
+
+# Application specific
+# Pinecone index snapshots
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.model
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Models and embeddings cache
+.cache/
+models/
+embeddings/
+.huggingface/
+
+# FastAPI
+__pycache__/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Docker
+docker-compose.override.yml
+*.dockerignore
+
+# Redis (if used)
+dump.rdb
+
+# Temporary files
+*_temp*
+~*
+
+# Documentation
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Virtual environment
+# Already covered by .venv/ but being explicit
+venv*/
+env*/
+ENV*/
+
+# UV specific
+.uv/
+
+# LangChain/LLM cache
+.langchain/
+.llama_index/
