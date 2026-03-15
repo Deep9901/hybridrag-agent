@@ -47,6 +47,7 @@ def rag_search_tool(query: str) -> str:
     except Exception as e:
         return f"RAG_ERROR::{e}"
 
+
 # --- Pydantic schemas for structured output ---
 class RouteDecision(BaseModel):
     route: Literal["rag", "web", "answer", "end"]
@@ -55,12 +56,13 @@ class RouteDecision(BaseModel):
 class RagJudge(BaseModel):
     sufficient: bool = Field(..., description="True if retrieved information is sufficient to answer the user's question, False otherwise.")
 
+
 # --- LLM instances with structured output where needed ---
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
-router_llm = ChatGroq(model="llama3-70b-8192", temperature=0).with_structured_output(RouteDecision)
-judge_llm = ChatGroq(model="llama3-70b-8192", temperature=0).with_structured_output(RagJudge)
-answer_llm = ChatGroq(model="llama3-70b-8192", temperature=0.7)
+router_llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0).with_structured_output(RouteDecision)
+judge_llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0).with_structured_output(RagJudge)
+answer_llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.7)
 
 # --- State: Shared Data Structure ---
 class AgentState(TypedDict, total=False):
@@ -73,6 +75,7 @@ class AgentState(TypedDict, total=False):
 # --- Node 1: router (decision) ---
 def router_node(state: AgentState,config : RunnableConfig) -> AgentState:
     print("\n--- Entering router_node ---")
+    # extract the latest user query from the messages
     query = next((m.content for m in reversed(state["messages"]) if isinstance(m, HumanMessage)), "")
     
     # MODIFIED: Get web_search_enabled directly from the config
