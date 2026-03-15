@@ -21,15 +21,17 @@ INDEX_NAME = "rag-index" # Make sure this matches your actual index name
 
 # retriever function 
 def get_retriever():
-    """Initializes and returns the Pinecone vector store retriever."""
+    """
+    Initializes and returns the Pinecone vector store retriever.
+    """
     # Ensure the index exists, create if not
-    if INDEX_NAME not in pc.list_indexes().names():
+    if INDEX_NAME not in pinecone.list_indexes().names():
         print(f"Creating new Pinecone index: {INDEX_NAME}...")
-        pc.create_index(
+        pinecone.create_index(
             name=INDEX_NAME,
-            dimension=384, # Changed dimension for 'sentence-transformers/all-MiniLM-L6-v2'
+            dimension=384, 
             metric="cosine",
-            spec=ServerlessSpec(cloud='aws', region='us-east-1') # Adjust cloud/region as per your Pinecone setup
+            spec=ServerlessSpec(cloud='aws', region='us-east-1') 
         )
         print(f"Created new Pinecone index: {INDEX_NAME}")
     
