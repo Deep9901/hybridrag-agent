@@ -1,6 +1,6 @@
 ## HybridRAG Agent
 
-A full-stack RAG (Retrieval-Augmented Generation) application featuring a FastAPI backend and a Streamlit frontend.
+This repository features a modular, full-stack AI architecture designed for high-precision information retrieval. The system implements a Hybrid Intelligence model, seamlessly switching between local specialized knowledge and real-time global data.
 
 ### Key Features
 
